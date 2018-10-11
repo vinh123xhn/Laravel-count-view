@@ -35,5 +35,7 @@
                 </div>
             @endforeach
         @endif
+        <a href="{{ route('home') }}" style="color: black; font-size: 24px; margin-top: 50px">Home</a>
+        <a href="{{ route('cart') }}"><img src="/resources/views/image/cart.png" style="height: 30px; width: 30px; margin-top: 50px; margin-left: 30px"> </a>
     </div>
 @endsection
