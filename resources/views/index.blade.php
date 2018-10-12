@@ -29,13 +29,13 @@
                             <p class="card-text text-danger">Số lượt xem: {{ $flower->view_count }}</p>
 
                             <!-- Nút XEM chuyển hướng người dùng sang trang chi tiết -->
-                            <a href="{{ route('show', $flower->id) }}" class="btn btn-primary">Xem</a>
+                            <a href="{{ route('show', $flower->id) }}" class="btn btn-primary" style="float: left">Xem</a>
+                            <a href="{{ route('addCart', $flower->id) }}" class="btn btn-primary" style="float: left; margin-left: 20px">Add Cart</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         @endif
         <a href="{{ route('home') }}" style="color: black; font-size: 24px; margin-top: 50px">Home</a>
-        <a href="{{ route('cart') }}"><img src="/resources/views/image/cart.png" style="height: 30px; width: 30px; margin-top: 50px; margin-left: 30px"> </a>
     </div>
 @endsection

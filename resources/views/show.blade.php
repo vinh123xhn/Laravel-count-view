@@ -21,6 +21,7 @@
                         <p class="card-text text-dark">${{ $flower->price }}</p>
                         <p class="card-text text-danger">Số lượt xem: {{ $flower->view_count }}</p>
 
+
                         <!-- Nút XEM chuyển hướng người dùng quay lại trang danh sách sản phẩm -->
                         <a href="{{ route('index') }}" class="btn btn-primary">< Quay lại </a>
                     </div>

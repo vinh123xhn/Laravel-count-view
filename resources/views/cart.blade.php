@@ -1,31 +1,34 @@
 @extends('layouts.master')
 @section('content')
     <div class="title m-b-md">
-        Giỏ Hàng
+        Chi tiết sản phẩm
     </div>
 
     <div class="row">
 
+            <?php
+
+                $cart = Session::get('cart');
+            ?>
         <!-- Kiểm tra biến $product được truyền sang từ ProductController -->
         <!-- Nếu biến $products không tồn tại thì hiển thị thông báo -->
-        @if(!isset($flower))
+        @if(!isset($cart))
             <p class="text-danger">Không có sản phẩn nào.</p>
         @else
 
         <!-- Nếu biến $product tồn tại thì hiển thị sản phẩm -->
+        @foreach($cart as $key => $flower)
             <div class="col-12">
                 <div class="card text-left" style="width: 100%;">
                     <div class="card-body">
-                        <h5 class="card-title">{</h5>
-                        <p class="card-text"></p>
-                        <p class="card-text text-dark"></p>
-                        <p class="card-text text-danger"></p>
-
-                        <!-- Nút XEM chuyển hướng người dùng quay lại trang danh sách sản phẩm -->
-                        <a href="{{ route('index') }}" class="btn btn-primary">< Quay lại </a>
+                        <h5 class="card-title">{{ $flower['name'] }}</h5>
+                        <p class="card-text text-dark">${{ $flower['price'] }}</p>
+                        <p class="card-text text-dark">{{ $flower['soluong'] }}</p>
+                        <a href="{{ route('delete-cart', $key) }}" class="btn btn-primary" style="float: left">Xoa</a>
                     </div>
                 </div>
             </div>
+            @endforeach
         @endif
     </div>
 @endsection

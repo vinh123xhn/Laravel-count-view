@@ -27,6 +27,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cart',function (){
-   return view('cart');
-})-> name('cart');
+
+
+Route::get('/add-to-cart/{id}', 'FlowerController@addCart') ->name('addCart');
+Route::get('/delete-to-cart/{id}', 'FlowerController@delete') ->name('delete-cart');
+
+Route::get('/cart', 'FlowerController@cart') ->name('cart');
+
